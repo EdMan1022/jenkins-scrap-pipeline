@@ -1,5 +1,5 @@
 
-class BaseImage {
+def class BaseImage {
 
     String foo
 
