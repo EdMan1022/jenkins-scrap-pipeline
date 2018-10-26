@@ -1,7 +1,14 @@
 def baseImagePackage
 
 node {
-    baseImagePackage = load 'utilities.groovy'
+
+    stage('Checkout') {
+        dir('pipeline-repo') {
+            git branch: 'master', url: 'https://github.com/EdMan1022/jenkins-scrap-pipeline.git'
+        }
+    }
+    
+    baseImagePackage = load 'pipeline-repo/src/main/groovy/pipelines/utilities.pipeline'
     def out = baseImagePackage.baseImage()
     echo out
 
