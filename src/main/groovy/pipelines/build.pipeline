@@ -9,7 +9,7 @@ node {
     }
     stage('Load util scripts') {
     baseImagePackage = load 'pipeline-repo/src/main/groovy/utilities/baseimage.groovy'
-    def out = baseImagePackage.BaseImage('baz')
+    def out = new baseImagePackage.BaseImage('baz')
     echo out.getFoo()
     }
 }
