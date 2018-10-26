@@ -7,9 +7,9 @@ node {
             git branch: 'master', url: 'https://github.com/EdMan1022/jenkins-scrap-pipeline.git'
         }
     }
-    
-    baseImagePackage = load 'pipeline-repo/src/main/groovy/pipelines/utilities.pipeline'
-    def out = baseImagePackage.baseImage()
-    echo out
-
+    stage('Load util scripts') {
+    baseImagePackage = load 'pipeline-repo/src/main/groovy/utilities/baseImage.groovy'
+    def out = baseImagePackage.BaseImage('baz')
+    echo out.getFoo()
+    }
 }
