@@ -1,8 +1,5 @@
-def baseImagePackage
-
 node {
-    baseImagePackage = load 'src/main/groovy/utilities/baseimage.groovy'
-    def out = baseImagePackage.baseImage()
+    def out =  sh "ls -la ${pwd()}"
     echo out
 
 }
